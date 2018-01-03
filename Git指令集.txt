@@ -17,6 +17,9 @@ git status
 查看提交日志
 git log
 
+版本回退
+git reset --hard <commit-id> 也可以写版本标签
+
 
 显示每一次的命令记录
 git reflog
@@ -41,8 +44,23 @@ git remote add origin 项目git地址
 将本地库的所有内容推送到远程库中
 git push -u origin master（以后就可以不用写-u了）
 
+查看远程库信息
+git remote
+查看远程库更详细的信息
+git remote -v
+
 从远程克隆仓库
 git clone git@xxx.git
+
+将最新的提交从远程库抓取下来
+git pull
+
+从远程库克隆仓库的时候只有master分支，想在其它分支工作需要本地创建分支
+git checkout -b origin/new
+然后将本地分支与远程分支关联
+git branch --set-upstream new origin/new
+再执行git pull
+
 
 创建分支（-b参数表示创建并切换到）
 git checkout -b dev
@@ -60,7 +78,10 @@ git checkout branchName
 git merge dev
 
 删除分支
-git branch -d dev
+git branch -d name
+
+丢弃一个没有合并过的分支
+git branch -D name
 
 存储当前工作现场
 git stash
@@ -79,7 +100,11 @@ git stash pop
 
 恢复工作现场时可以指定要恢复的工作现场
 
+为分支添加标签，切换到该分支
+git tag name 后面可以加ommit-id表示为该次提交打标签
 
+查看当前分支标签名
+git tag
 
 
 
