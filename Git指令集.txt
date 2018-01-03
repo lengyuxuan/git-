@@ -37,3 +37,4 @@ git reset HEAD file：丢弃暂存区的修改，然后再撤销工作区的修改：git checkout -- f
 
 当从工作区删除一个文件后，git status会显示删除标记，如果需要从版本库中删除该文件：git rm file，并且git commit -m ""
 如果是误删除，则使用git checkout -- file恢复
+====================================2018-01-03 09:34:32
