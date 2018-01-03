@@ -1,0 +1,39 @@
+初始化：
+git config --global user.name "xxx"
+git config --global user.email "xxx"
+
+将普通目录变为可管理的仓库：
+git init
+
+将修改信息添加到暂存区：
+git add <file>
+
+把暂存区的所有内容提交到当前分支：
+git commit -m "备注信息"
+
+当前仓库的状态：
+git status
+
+查看距离上一次提交之后的修改：
+git diff <commit-id>
+
+显示从最近到最远的提交日志：
+git log：最近的一次是append GPL，上一次是add distributed，最早的一次是wrote a reanme file
+
+HEAD表示当前版本，上一个版本是HEAD^，再上一个是HEAD^^，或者HEAD~100表示前面第100个版本（HEAD其实是时间线链表上的一个指针，版本号相当于物理地址，^相当于next指针域）
+
+git reset --hard <commit-id>，版本号不用写全，写前几位git会自动查找
+
+记录每一个命令：
+git reflog，可以通过该命令查找版本id
+
+创建git仓库的时候，git会自动创建一个master分支
+
+撤销工作区的修改：
+git checkout -- file
+
+提交到暂存区后想丢弃修改：
+git reset HEAD file：丢弃暂存区的修改，然后再撤销工作区的修改：git checkout -- file
+
+当从工作区删除一个文件后，git status会显示删除标记，如果需要从版本库中删除该文件：git rm file，并且git commit -m ""
+如果是误删除，则使用git checkout -- file恢复
