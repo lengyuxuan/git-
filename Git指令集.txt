@@ -67,6 +67,10 @@ git push origin tagname
 一次性推送全部尚未推送到远程的本地标签
 git push --tags
 
+删除远程标签：
+先删除本地标签：git tag -d tagname
+远程删除：git push origin :refs/tag/v0.9
+
 
 创建分支（-b参数表示创建并切换到）
 git checkout -b dev
@@ -118,9 +122,28 @@ git show tagname
 删除标签：
 git tag -d v1.0
 
+忽略某些文件时，需要编写.gitignore文件，例如
+*.py
+*.class
+dist
+然后将该文件也提交到git即可
+这样git就会过滤掉相关文件和目录
+如果想强制添加：
+git add -f file
 
+如果想知道是哪个规则限制文件无法提交
+git check-ignore -v file
 
+为命令配置别名
+git config --global alias st status
+意思是使用st代替status
+git st 等价 git status
 
+别名添加在
+[alias]
+    st = status
+
+每个仓库的git配置文件都放在.git/config
 
 
 
