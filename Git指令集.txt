@@ -61,6 +61,12 @@ git checkout -b origin/new
 git branch --set-upstream new origin/new
 再执行git pull
 
+推送标签到远程：
+git push origin tagname
+
+一次性推送全部尚未推送到远程的本地标签
+git push --tags
+
 
 创建分支（-b参数表示创建并切换到）
 git checkout -b dev
@@ -106,7 +112,11 @@ git tag name 后面可以加ommit-id表示为该次提交打标签
 查看当前分支标签名
 git tag
 
+查看标签信息
+git show tagname
 
+删除标签：
+git tag -d v1.0
 
 
 
