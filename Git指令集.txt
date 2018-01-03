@@ -61,3 +61,45 @@ git merge dev
 
 删除分支
 git branch -d dev
+
+存储当前工作现场
+git stash
+
+查看工作区保存记录
+git stash list
+
+恢复工作现场
+git stash apply
+
+删除工作现场保存
+git stash drop
+
+恢复工作现场并删除保存记录
+git stash pop
+
+恢复工作现场时可以指定要恢复的工作现场
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
